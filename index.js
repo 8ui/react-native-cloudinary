@@ -1,5 +1,5 @@
-var FileTransfer = require('NativeModules');
-var Sha1 = require('Sha1');
+var { NativeModules } = require('react-native');
+var Sha1 = require('sha1');
 
 module.exports = {
 	config: function(options) {
@@ -9,7 +9,7 @@ module.exports = {
 				apiKey,
 				cloudName
 			}
-		*/ 
+		*/
 		this.options = options;
 	},
 
@@ -28,7 +28,7 @@ module.exports = {
 			    }
 			};
 
-		FileTransfer.upload(obj, (err, res) => {
+		NativeModules.FileTransfer.upload(obj, (err, res) => {
 			if(res) successCb(res);
 		    if(err) errorCb(err);
 		});
