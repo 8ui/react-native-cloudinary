@@ -1,5 +1,5 @@
 var { NativeModules } = require('react-native');
-var Sha1 = require('sha1');
+var Sha1 = require('./Sha1');
 
 module.exports = {
 	config: function(options) {
